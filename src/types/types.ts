@@ -21,8 +21,7 @@ export interface ejemplo {
   esp: string
 }
 
-
-
+export type idioma = 'esp' | 'ing'
 export type stageVerb = 'verify' | 'next' | 'finish'
 
 export type verbType = 'infinitive' | 'presentContinuous' | 'pastSimple' | 'future';
@@ -33,4 +32,8 @@ export interface conjugationVerb {
   future: string,
 }
 
+export type controlVerb = {
+  label: string,
+  name: verbType
+}
 
