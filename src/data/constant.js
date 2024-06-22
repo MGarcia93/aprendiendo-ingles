@@ -1,1 +1,0 @@
-export const TOTAL_VERBS=10;
