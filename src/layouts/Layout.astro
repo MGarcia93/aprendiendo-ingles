@@ -1,4 +1,5 @@
 ---
+import "@fontsource-variable/libre-franklin";
 interface Props {
 	title: string;
 }
@@ -15,37 +16,78 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<style is:global>
+			body {
+				font-family: "Libre Franklin Variable", sans-serif;
+			}
+		</style>
 	</head>
-	<body>
-		<slot />
+	<body
+		class="bg-slate-900 flex flex-col min-h-screen text-white max-w-5xl m-auto"
+	>
+		<header class="py-6 px-4 md:px-6 border-b border-muted-900">
+			<div class="container mx-auto flex items-center justify-between">
+				<div class="flex items-center gap-2">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="w-6 h-6 text-primary-900"
+					>
+						<path
+							d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"
+						></path>
+					</svg>
+					<h1 class="text-2xl font-bold">English Learner</h1>
+				</div>
+				<nav class="hidden md:flex items-center gap-4">
+					<a class="text-sm font-medium hover:underline" href="#">
+						Verbos
+					</a>
+					<a class="text-sm font-medium hover:underline" href="#">
+						Palabras Nuevas
+					</a>
+					<a class="text-sm font-medium hover:underline" href="#">
+						Arreglar la Frase
+					</a>
+				</nav>
+				<button
+					class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 md:hidden"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="w-5 h-5 text-foreground-900"
+					>
+						<line x1="4" x2="20" y1="12" y2="12"></line>
+						<line x1="4" x2="20" y1="6" y2="6"></line>
+						<line x1="4" x2="20" y1="18" y2="18"></line>
+					</svg>
+					<span class="sr-only">Toggle Menu</span>
+				</button>
+			</div>
+		</header>
+		<main class="flex-1 py-12 px-4 md:px-6">
+			<slot />
+		</main>
+		<footer
+			class="py-4 px-4 md:px-6 border-t border-muted-900 text-xs text-muted-foreground-900"
+		>
+			<div class="container mx-auto flex items-center justify-between">
+			</div>
+		</footer>
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
