@@ -1,6 +1,9 @@
 import { useState } from "react"
-import { RefreshIcon } from "../icons/RefreshIcon"
-type idioma = 'esp' | 'ing'
+import { Mic } from "../icons/Mic"
+import api from "../../../utils/api"
+import type { idioma } from "../../../types/types"
+import { Translate } from "../icons/Translate"
+
 interface Props {
     ing: string,
     esp: string
@@ -11,8 +14,10 @@ export function Title({ ing, esp }: Props) {
     const changeIdioma = () => {
         setIdioma(prev => prev == 'ing' ? 'esp' : 'ing');
     }
-    return <div className="flex items-center gap-2">
-        <div className="text-6xl font-bold">{idioma == 'ing' ? ing : esp}</div>
-        <span onClick={changeIdioma}><RefreshIcon /></span>
+
+    return <div className="flex items-center gap-3">
+        <button onClick={changeIdioma}><Translate className="w-8 h-8" /></button>
+        <div className="text-6xl font-bold" title="traducir">{idioma == 'ing' ? ing : esp}</div>
+        <button onClick={() => api.speakWord(ing)}><Mic className="w-8 h-8" /></button>
     </div>
 }
