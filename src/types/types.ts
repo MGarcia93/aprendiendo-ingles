@@ -1,3 +1,4 @@
+
 export interface Card {
   title: string;
   body: string;
@@ -6,6 +7,13 @@ export interface Card {
 }
 
 export type verbs = verb[]
+export type words = word[]
+export interface buttonInterface{
+  label:string,
+  icon:()=>JSX.Element,
+  className?:string
+}
+export type buttons= Record<stageVerb,buttonInterface>
 
 export interface verb {
   infinitive: string
@@ -15,7 +23,12 @@ export interface verb {
   future: string
   ejemplo: ejemplo[]
 }
-
+export interface word {
+  ing: string
+  esp: string[]
+  categorias:string[]
+  ejemplos: ejemplo[]
+}
 export interface ejemplo {
   ing: string
   esp: string
