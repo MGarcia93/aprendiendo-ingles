@@ -9,6 +9,7 @@ import Collapse from "../Collapse";
 import { Control } from "../form/Control";
 import { Examples } from "../Examples";
 import { Button } from "../form/Button";
+import { Paginate } from "../Paginate";
 
 
 export function Verbs() {
@@ -53,7 +54,8 @@ export function Verbs() {
             <div className="flex items-center gap-2">
                 <Button stage={stage} onClick={handleClickButton}></Button>
             </div>
-            <div className="text-sm font-medium">Verbo {current} de {TOTAL_VERBS}</div>
+            <Paginate current={current} total={TOTAL_VERBS} label="Verbo"></Paginate>
+
         </div>
     )
 }
