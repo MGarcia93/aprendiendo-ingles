@@ -1,0 +1,96 @@
+---
+import All from "../../components/icons/All.astro";
+import Ambulance from "../../components/icons/Ambulance.astro";
+import Avatar from "../../components/icons/Avatar.astro";
+import Calendar from "../../components/icons/Calendar.astro";
+import Cart from "../../components/icons/Cart.astro";
+import Plane from "../../components/icons/Plane.astro";
+import Pointer from "../../components/icons/Pointer.astro";
+import Wheater from "../../components/icons/Wheater.astro";
+import Gear from "../../components/icons/Gear.astro";
+import Gift from "../../components/icons/Gift.astro";
+import Card from "../../components/Card.astro";
+import Layout from "../../layouts/Layout.astro";
+import type { Card as typeCard } from "../../types/types";
+
+const links: typeCard[] =[
+	{
+		title: "Todas",
+		href: "pharses/Todos",
+		body: "Todas las categorías.",
+		icon: All,
+	},
+	{
+		title: "Saludos y presentaciones",
+		href: "pharses/Saludos_y_presentaciones",
+		body: "Aprenderás a saludar y a presentarte en diferentes contextos.",
+		icon: Gift,
+	},
+	{
+		title: "Información personal",
+		href: "pharses/Informacion_personal",
+		body: "Cómo hablar sobre ti mismo, tu familia, tus hobbies, etc.",
+		icon: Avatar,
+	},
+	{
+		title: "Vida diaria",
+		href: "pharses/Vida_diaria",
+		body: "Expresar necesidades básicas como comida, bebida, transporte, etc.",
+		icon: Calendar,
+	},
+	{
+		title: "Compras",
+		href: "pharses/Compras",
+		body: "Vocabulario relacionado con ir de compras, precios, números, etc.",
+		icon: Cart,
+	},
+	{
+		title: "Tiempo y clima",
+		href: "pharses/Tiempo_y_clima",
+		body: "Hablar sobre el clima y preguntar por la hora.",
+		icon: Wheater,
+	},
+	{
+		title: "Direcciones y ubicaciones",
+		href: "pharses/Direcciones_y_ubicaciones",
+		body: "Preguntar y dar direcciones simples.",
+		icon: Pointer,
+	},
+	{
+		title: "Actividades cotidianas",
+		href: "pharses/Actividades_cotidianas",
+		body: "Expresar lo que haces en tu rutina diaria.",
+		icon: Calendar,
+	},
+	{
+		title: "Gustos y preferencias",
+		href: "pharses/Gustos_y_preferencias",
+		body: "Hablar sobre lo que te gusta y lo que no te gusta.",
+		icon: Gear,
+	},
+	{
+		title: "Planes futuros",
+		href: "pharses/Planes_futuros",
+		body: "Usar el presente simple para hablar sobre planes y horarios.",
+		icon: Plane,
+	},
+	{
+		title: "Emergencias básicas",
+		href: "pharses/Emergencias_basicas",
+		body: "Expresar necesidades urgentes y solicitar ayuda básica.",
+		icon: Ambulance,
+	}
+	
+	
+]
+---
+
+<Layout title="Aprende nuevas palabras">
+  
+  <h2 class="text-3xl font-bold mb-6">Arreglar la Frase</h2>
+  <ul
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+  >
+   {links.map(link=><Card {...link}></Card>)}
+  </ul>
+</Layout>

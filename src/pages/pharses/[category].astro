@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+export function getStaticPaths() {
+  return [
+    { params: { category: "Saludos_y_presentaciones" } },
+    { params: { category: "Informacion_personal" } },
+    { params: { category: "Vida_diaria" } },
+    { params: { category: "Compras" } },
+    { params: { category: "Tiempo_y_clima" } },
+    { params: { category: "Direcciones_y_ubicaciones" } },
+    { params: { category: "Actividades_cotidianas" } },
+    { params: { category: "Gustos_y_preferencias" } },
+    { params: { category: "Planes_futuros" } },
+    { params: { category: "Emergencias_basicas" } },
+    { params: { category: "Todos" } },
+  ];
+}
+const { category } = Astro.params;
+---
+
+<Layout title="Aprende nuevas palabras">
+  En proceso {category}
+</Layout>
