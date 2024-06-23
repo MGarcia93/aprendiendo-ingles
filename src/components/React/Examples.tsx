@@ -1,4 +1,4 @@
-import type { ejemplo } from "../../../types/types";
+import type { ejemplo } from "../../types/types";
 import { Example } from "./Example";
 
 interface Props {

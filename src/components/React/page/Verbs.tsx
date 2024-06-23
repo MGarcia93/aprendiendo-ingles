@@ -1,13 +1,14 @@
-import { verbs as allVerbs } from "../../data/verbs";
+import { verbs as allVerbs } from "../../../data/verbs";
 import { useState } from "react";
-import type { stageVerb, verbs, conjugationVerb, verbType } from "../../types/types";
-import { TOTAL_VERBS, controls } from "../../data/constant";
-import { Title } from "./Verb/Title";
-import { Control } from "./Verb/Control";
-import { Buton } from "./Verb/Buton";
-import api from "../../utils/api";
-import Collapse from "./Verb/Collapse";
-import { Examples } from "./Verb/Examples";
+import type { stageVerb, verbs, conjugationVerb, verbType } from "../../../types/types";
+import { TOTAL_VERBS, controls } from "../../../data/constant";
+
+import api from "../../../utils/api";
+import { Title } from "../Title";
+import Collapse from "../Collapse";
+import { Control } from "../form/Control";
+import { Examples } from "../Examples";
+import { Button } from "../form/Button";
 
 
 export function Verbs() {
@@ -25,12 +26,13 @@ export function Verbs() {
             const e = api.verifyVerb(values, verb);
             setError(e);
             if (Object.entries(e).length == 0) {
-                setStage('next');
+                setStage(current == TOTAL_VERBS ? 'finish' : 'next');
                 return;
             }
         }
         if (stage == 'next') {
             setCurrent(prev => prev + 1);
+            setValues(api.cleanVerb());
             setStage('verify');
         }
         if (stage == 'finish') {
@@ -49,7 +51,7 @@ export function Verbs() {
                 <Examples examples={verb.ejemplo} />
             </Collapse>
             <div className="flex items-center gap-2">
-                <Buton stage={stage} onClick={handleClickButton}></Buton>
+                <Button stage={stage} onClick={handleClickButton}></Button>
             </div>
             <div className="text-sm font-medium">Verbo {current} de {TOTAL_VERBS}</div>
         </div>

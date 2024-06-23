@@ -1,7 +1,6 @@
 import { useState } from "react";
-import type { idioma, ejemplo } from "../../../types/types";
-import { RefreshIcon } from "../icons/RefreshIcon";
-import { Translate } from "../icons/Translate";
+import type { idioma, ejemplo } from "../../types/types";
+import { Translate } from "./icons/Translate";
 
 interface Props {
     example: ejemplo

@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { Mic } from "../icons/Mic"
-import api from "../../../utils/api"
-import type { idioma } from "../../../types/types"
-import { Translate } from "../icons/Translate"
+import { Mic } from "./icons/Mic"
+import api from "../../utils/api"
+import type { idioma } from "../../types/types"
+import { Translate } from "./icons/Translate"
 
 interface Props {
     ing: string,

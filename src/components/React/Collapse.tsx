@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Arrow } from '../icons/Arrow';
+import { Arrow } from './icons/Arrow';
 
 interface Props {
     title: string;
