@@ -1,5 +1,5 @@
 export const pharses = {
-    "Saludos y presentaciones": [
+    "Saludos_y_presentaciones": [
         "Hello! How are you?",
         "Good morning! My name is Ana.",
         "Nice to meet you!",
@@ -51,7 +51,7 @@ export const pharses = {
         "Hello! How's your cat?",
         "Hey there! What's your favorite color?"
     ],
-    "Información personal": [
+    "Informacion_personal": [
         "I have two sisters and one brother.",
         "My favorite hobby is playing soccer.",
         "I live in a small town near the mountains.",
@@ -102,7 +102,7 @@ export const pharses = {
         "I'm learning to speak Mandarin.",
         "He's planning a trip to Africa."
     ],
-    "Vida diaria": [
+    "Vida_diaria": [
         "I usually have breakfast at 7 AM.",
         "Do you want to go for a walk this evening?",
         "I need to buy some groceries for dinner.",
@@ -257,7 +257,7 @@ export const pharses = {
         "She's trying on shoes at the mall.",
         "He's looking for a new backpack for school."
     ],
-    "Tiempo y clima": [
+    "Tiempo_y_clima": [
         "It's sunny today.",
         "What's the weather like tomorrow?",
         "It usually rains a lot in the spring.",
@@ -308,7 +308,7 @@ export const pharses = {
         "They're making memories.",
         "I'm cherishing moments."
     ],
-    "Direcciones y ubicaciones": [
+    "Direcciones_y_ubicaciones": [
         "Excuse me, where is the nearest bank?",
         "Turn left at the traffic light.",
         "The restaurant is next to the movie theater.",
@@ -358,7 +358,7 @@ export const pharses = {
         "He's rollerblading in the park.",
         "They're skateboarding down the street."
     ],
-    "Actividades cotidianas": [
+    "Actividades_cotidianas": [
         "I usually walk my dog in the park.",
         "She goes to the gym three times a week.",
         "He watches TV every evening after dinner.",
@@ -406,7 +406,7 @@ export const pharses = {
         "I practice photography as a hobby.",
         "She studies art history in the evenings.",
         "He plays chess with his grandfather."
-    ], "Gustos y preferencias": [
+    ], "Gustos_y_preferencias": [
         "I love watching movies on weekends.",
         "My favorite color is blue.",
         "She doesn't like eating vegetables.",
@@ -459,7 +459,7 @@ export const pharses = {
         "She enjoys going to the spa.",
         "He's interested in meditation and mindfulness."
     ],
-    "Planes futuros": [
+    "Planes_futuros": [
         "We are going to visit our grandparents next weekend.",
         "She works from 9 AM to 5 PM every day.",
         "What time does the movie start tonight?",
@@ -511,7 +511,7 @@ export const pharses = {
         "I'm going to write letters to my friends.",
         "She's going to learn to play chess."
     ],
-    "Emergencias básicas": [
+    "Emergencias_basicas": [
         "Help! I've lost my wallet.",
         "Call an ambulance, please!",
         "I need to find a police station.",
