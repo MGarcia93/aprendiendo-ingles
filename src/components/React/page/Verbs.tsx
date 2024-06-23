@@ -1,7 +1,7 @@
 import { verbs as allVerbs } from "../../../data/verbs";
 import { useState } from "react";
 import type { stageVerb, verbs, conjugationVerb, verbType } from "../../../types/types";
-import { TOTAL_VERBS, controls } from "../../../data/constant";
+import { TOTAL_VERBS, buttonsVerb, controls } from "../../../data/constant";
 
 import api from "../../../utils/api";
 import { Title } from "../Title";
@@ -52,7 +52,7 @@ export function Verbs() {
                 <Examples examples={verb.ejemplo} />
             </Collapse>
             <div className="flex items-center gap-2">
-                <Button stage={stage} onClick={handleClickButton}></Button>
+                <Button stage={stage} onClick={handleClickButton} buttons={buttonsVerb}></Button>
             </div>
             <Paginate current={current} total={TOTAL_VERBS} label="Verbo"></Paginate>
 
