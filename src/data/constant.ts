@@ -5,6 +5,7 @@ import type { buttonInterface, controlVerb, stageVerb } from "../types/types";
 
 export const TOTAL_VERBS=10;
 export const TOTAL_WORDS=10;
+export const TOTAL_PHARSES=2;
 
 export const controls: controlVerb[] = [
     {
@@ -55,5 +56,25 @@ export const buttonsWord:Record<stageVerb,buttonInterface> = {
     finish: {
         label: "Finalizar",
         icon: ArrowBack,
+    }
+}
+
+export const buttonsPharse:Record<stageVerb,buttonInterface> = {
+    verify: {
+        label: "Enviar",
+        
+        className:"bg-zinc-800 w-full border-0 "
+    },
+    next: {
+        label: "Siguiente",
+        icon: ArrowNext,
+        className:"bg-green-700 w-full "
+
+    },
+    finish: {
+        label: "Finalizar",
+        icon: ArrowBack,
+        className:"bg-zinc-900  w-full "
+
     }
 }
