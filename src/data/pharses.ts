@@ -1,5 +1,7 @@
-export const pharses = {
-    "Saludos_y_presentaciones": [
+import type { categoriesPharse } from "../types/types";
+
+export const pharses:Record<categoriesPharse,string[]> = {
+    Saludos_y_presentaciones: [
         "Hello! How are you?",
         "Good morning! My name is Ana.",
         "Nice to meet you!",
@@ -51,7 +53,7 @@ export const pharses = {
         "Hello! How's your cat?",
         "Hey there! What's your favorite color?"
     ],
-    "Informacion_personal": [
+    Informacion_personal: [
         "I have two sisters and one brother.",
         "My favorite hobby is playing soccer.",
         "I live in a small town near the mountains.",
@@ -102,7 +104,7 @@ export const pharses = {
         "I'm learning to speak Mandarin.",
         "He's planning a trip to Africa."
     ],
-    "Vida_diaria": [
+    Vida_diaria: [
         "I usually have breakfast at 7 AM.",
         "Do you want to go for a walk this evening?",
         "I need to buy some groceries for dinner.",
@@ -153,7 +155,7 @@ export const pharses = {
         "They go to concerts in the city.",
         "I go to the farmer's market on Saturdays."
     ],
-    "Compras": [
+    Compras: [
         "How much does this shirt cost?",
         "I would like to buy a ticket for the concert.",
         "Can I pay with a credit card?",
@@ -204,60 +206,8 @@ export const pharses = {
         "They're shopping for home decor.",
         "I'm ordering takeout for dinner."
     ],
-    "Compras": [
-        "How much does this shirt cost?",
-        "I would like to buy a ticket for the concert.",
-        "Can I pay with a credit card?",
-        "The shoes are on sale today!",
-        "I need to find a gift for my friend's birthday.",
-        "She's looking for a new dress.",
-        "He wants to buy a new laptop.",
-        "They're shopping for furniture.",
-        "I'm browsing for books at the bookstore.",
-        "She's trying on sunglasses at the store.",
-        "He's looking for a present for his mom.",
-        "They're comparing prices for TVs.",
-        "I'm returning this sweater because it's too small.",
-        "She's exchanging the shoes for a different size.",
-        "He's ordering flowers for a special occasion.",
-        "They're shopping for groceries.",
-        "I'm buying a new phone charger.",
-        "She's getting a new suitcase for her trip.",
-        "He's purchasing a gift card.",
-        "They're shopping for school supplies.",
-        "I'm looking for a jacket for the winter.",
-        "She's searching for a necklace for the wedding.",
-        "He's buying a camera for his photography hobby.",
-        "They're checking out the latest video games.",
-        "I'm getting some new headphones.",
-        "She's picking out a new backpack.",
-        "He's selecting a new watch.",
-        "They're choosing a gift for their anniversary.",
-        "I'm purchasing a new kitchen appliance.",
-        "She's buying a new bicycle.",
-        "He's shopping for a new mattress.",
-        "They're looking at camping gear.",
-        "I'm shopping for a new pet bed.",
-        "She's getting gardening tools.",
-        "He's purchasing office supplies.",
-        "They're buying hiking boots.",
-        "I'm ordering a new book online.",
-        "She's adding items to her shopping cart.",
-        "He's checking out the latest fashion trends.",
-        "They're exploring the local market.",
-        "I'm browsing through the clearance section.",
-        "She's trying out a new perfume.",
-        "He's looking at sports equipment.",
-        "They're searching for eco-friendly products.",
-        "I'm buying tickets for a movie.",
-        "She's getting art supplies.",
-        "He's purchasing a new smartphone.",
-        "They're shopping for home decor.",
-        "I'm ordering takeout for dinner.",
-        "She's trying on shoes at the mall.",
-        "He's looking for a new backpack for school."
-    ],
-    "Tiempo_y_clima": [
+   
+    Tiempo_y_clima: [
         "It's sunny today.",
         "What's the weather like tomorrow?",
         "It usually rains a lot in the spring.",
@@ -308,7 +258,7 @@ export const pharses = {
         "They're making memories.",
         "I'm cherishing moments."
     ],
-    "Direcciones_y_ubicaciones": [
+    Direcciones_y_ubicaciones: [
         "Excuse me, where is the nearest bank?",
         "Turn left at the traffic light.",
         "The restaurant is next to the movie theater.",
@@ -358,7 +308,7 @@ export const pharses = {
         "He's rollerblading in the park.",
         "They're skateboarding down the street."
     ],
-    "Actividades_cotidianas": [
+    Actividades_cotidianas: [
         "I usually walk my dog in the park.",
         "She goes to the gym three times a week.",
         "He watches TV every evening after dinner.",
@@ -406,7 +356,8 @@ export const pharses = {
         "I practice photography as a hobby.",
         "She studies art history in the evenings.",
         "He plays chess with his grandfather."
-    ], "Gustos_y_preferencias": [
+    ], 
+    Gustos_y_preferencias: [
         "I love watching movies on weekends.",
         "My favorite color is blue.",
         "She doesn't like eating vegetables.",
@@ -459,7 +410,7 @@ export const pharses = {
         "She enjoys going to the spa.",
         "He's interested in meditation and mindfulness."
     ],
-    "Planes_futuros": [
+    Planes_futuros: [
         "We are going to visit our grandparents next weekend.",
         "She works from 9 AM to 5 PM every day.",
         "What time does the movie start tonight?",
@@ -511,7 +462,7 @@ export const pharses = {
         "I'm going to write letters to my friends.",
         "She's going to learn to play chess."
     ],
-    "Emergencias_basicas": [
+    Emergencias_basicas: [
         "Help! I've lost my wallet.",
         "Call an ambulance, please!",
         "I need to find a police station.",
