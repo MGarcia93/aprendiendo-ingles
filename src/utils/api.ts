@@ -1,5 +1,6 @@
 import { controls } from "../data/constant";
 import type { conjugationVerb, verbType, word } from "../types/types";
+import { generateError } from "./generateError";
 
 const api = {
   verifyVerb: (datos: conjugationVerb, verb: any): Record<verbType, string> => {
@@ -38,6 +39,13 @@ const api = {
     } else {
       console.error('Tu navegador no soporta la Web Speech API.');
     }
+  },
+  getPharse: (pharse: string): string => {
+    return generateError(pharse);
+  },
+  verifyPharse: (value: string, correct: string): boolean => {
+    return value === correct;
   }
+
 };
 export default api;
