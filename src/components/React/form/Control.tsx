@@ -1,18 +1,26 @@
+import { useState } from "react"
+import { EyeClose } from "../icons/EyeClose";
+import { EyeOpen } from "../icons/EyeOpen";
 
 interface Props {
     label: string,
     name: string,
     value: string,
     error?: string,
+    answer: string,
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
-export function Control({ label, value, name, onChange, error }: Props) {
-    return <div className="space-y-2">
+export function Control({ label, value, name, onChange, error, answer }: Props) {
+    const [showAnswer, setShowAnswer] = useState<boolean>(false);
+    const toggleAnswer=()=>{
+        setShowAnswer(prev=>!prev)
+    }
+    return <div className="space-y-2 relative">
         <label htmlFor={name} className="text-sm font-medium">
             {label}
         </label>
         <input
-            className={`
+            className={`                
                 flex 
                 h-10 
                 w-full 
@@ -26,15 +34,23 @@ export function Control({ label, value, name, onChange, error }: Props) {
                 focus-visible:ring-offset-2 
                 disabled:cursor-not-allowed 
                 disabled:opacity-50
-                text-black
-                ${error ? ' border-red-500' : ''}
+                ${showAnswer ? 'text-gray-500' : 'text-black'}
+                ${error ? ' border-red-500' : ''}                
                 `}
+            readOnly={showAnswer}
             name={name}
             id={name}
-            value={value}
+            value={showAnswer?answer:value}
             onChange={onChange}
 
         />
+        <button className="absolute right-2 bottom-2 text-black" title={showAnswer?'volver a ingresar repuesta':'mostrar repuesta'} onClick={toggleAnswer}>
+            {showAnswer ?
+                <EyeClose className=" w-6 h-6 "></EyeClose>
+                :
+                <EyeOpen className=" w-6 h-6 "></EyeOpen>
+            }
+        </button>
         {error && <p className="text-red-500 text-sm">{error}</p>}
     </div>
 }

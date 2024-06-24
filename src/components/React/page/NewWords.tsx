@@ -46,7 +46,7 @@ export function NewWords() {
             <Title ing={word.ing} esp={word.esp[0]}></Title>
             <Categories categories={word.categorias}></Categories>
             <div className="grid grid-cols-1 gap-4 w-full">
-                <Control name="word" label="Escribe la traducción de la palabra" value={value} onChange={onChange} error={error} ></Control>
+                <Control name="word" label="Escribe la traducción de la palabra" value={value} onChange={onChange} error={error}  answer={word.esp[0]}></Control>
             </div>
 
             <Collapse title="Ejemplos">
