@@ -1,5 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { pharses as data } from "../../data/pharses";
+import { Pharses } from "../../components/React/page/Pharses";
+import type { categoriesPharse } from "../../types/types";
+type  categories = categoriesPharse & 'Todos'
 export function getStaticPaths() {
   return [
     { params: { category: "Saludos_y_presentaciones" } },
@@ -15,9 +19,16 @@ export function getStaticPaths() {
     { params: { category: "Todos" } },
   ];
 }
-const { category } = Astro.params;
+const { category } = Astro.params as { category: categories };
+const pharses: string[] =
+  category === "Todos"
+    ? Object.entries(data).reduce(
+        (acu, [key, values]) => [...acu, ...values],
+        [] as string[]
+      )
+    : data[category];
 ---
 
 <Layout title="Aprende nuevas palabras">
-  En proceso {category}
+  <Pharses pharses={pharses} client:only />
 </Layout>
