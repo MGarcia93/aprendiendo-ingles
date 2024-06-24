@@ -8,12 +8,13 @@ export interface Card {
 
 export type verbs = verb[]
 export type words = word[]
-export interface buttonInterface{
-  label:string,
-  icon:()=>JSX.Element,
-  className?:string
+export type categoriesPharse = 'Saludos_y_presentaciones' | 'Informacion_personal' | 'Vida_diaria' | 'Compras' | 'Tiempo_y_clima' | 'Direcciones_y_ubicaciones' | 'Actividades_cotidianas' | 'Gustos_y_preferencias' | 'Planes_futuros' | 'Emergencias_basicas'
+export interface buttonInterface {
+  label: string,
+  icon?: () => JSX.Element,
+  className?: string
 }
-export type buttons= Record<stageVerb,buttonInterface>
+export type buttons = Record<stageVerb, buttonInterface>
 
 export interface verb {
   infinitive: string
@@ -26,7 +27,7 @@ export interface verb {
 export interface word {
   ing: string
   esp: string[]
-  categorias:string[]
+  categorias: string[]
   ejemplos: ejemplo[]
 }
 export interface ejemplo {
