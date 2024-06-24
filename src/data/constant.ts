@@ -5,7 +5,7 @@ import type { buttonInterface, controlVerb, stageVerb } from "../types/types";
 
 export const TOTAL_VERBS=10;
 export const TOTAL_WORDS=10;
-export const TOTAL_PHARSES=2;
+export const TOTAL_PHARSES=10;
 
 export const controls: controlVerb[] = [
     {
