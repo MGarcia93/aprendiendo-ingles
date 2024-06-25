@@ -11,16 +11,20 @@ interface Props {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 export function Control({ label, value, name, onChange, error, answer }: Props) {
+
     const [showAnswer, setShowAnswer] = useState<boolean>(false);
-    const toggleAnswer=()=>{
-        setShowAnswer(prev=>!prev)
+    const toggleAnswer = () => {
+        setShowAnswer(prev => !prev)
     }
-    return <div className="space-y-2 relative">
+    console.log({ name, showAnswer })
+    return <div className="space-y-2 ">
         <label htmlFor={name} className="text-sm font-medium">
             {label}
         </label>
-        <input
-            className={`                
+        <div className="relative">
+
+            <input
+                className={`                
                 flex 
                 h-10 
                 w-full 
@@ -37,20 +41,21 @@ export function Control({ label, value, name, onChange, error, answer }: Props) 
                 ${showAnswer ? 'text-gray-500' : 'text-black'}
                 ${error ? ' border-red-500' : ''}                
                 `}
-            readOnly={showAnswer}
-            name={name}
-            id={name}
-            value={showAnswer?answer:value}
-            onChange={onChange}
+                readOnly={showAnswer}
+                name={name}
+                id={name}
+                value={showAnswer ? answer : value}
+                onChange={onChange}
 
-        />
-        <button className="absolute right-2 bottom-2 text-black" title={showAnswer?'volver a ingresar repuesta':'mostrar repuesta'} onClick={toggleAnswer}>
-            {showAnswer ?
-                <EyeClose className=" w-6 h-6 "></EyeClose>
-                :
-                <EyeOpen className=" w-6 h-6 "></EyeOpen>
-            }
-        </button>
+            />
+            <button className="absolute right-2 bottom-2 text-black" title={showAnswer ? 'volver a ingresar repuesta' : 'mostrar repuesta'} onClick={toggleAnswer}>
+                {showAnswer ?
+                    <EyeClose className=" w-6 h-6 "></EyeClose>
+                    :
+                    <EyeOpen className=" w-6 h-6 "></EyeOpen>
+                }
+            </button>
+        </div>
         {error && <p className="text-red-500 text-sm">{error}</p>}
     </div>
 }
