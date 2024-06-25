@@ -24,6 +24,12 @@ export function Pharses({ pharses: pharsesAll }: Props) {
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.target.value);
   }
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.code === 'Enter' && stage == 'verify') {
+      event.preventDefault()
+      handleClickButton()
+    }
+  }
   const handleClickButton = () => {
     if (stage == 'verify') {
       const e = !api.verifyPharse(value, pharse);
@@ -71,6 +77,7 @@ export function Pharses({ pharses: pharsesAll }: Props) {
       <div className="flex flex-col gap-4">
         <textarea
           onChange={onChange}
+          onKeyDown={handleKeyDown}
           className={`flex 
                 h-10 
                 w-full 
