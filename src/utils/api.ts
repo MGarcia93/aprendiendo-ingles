@@ -6,7 +6,7 @@ const api = {
   verifyVerb: (datos: conjugationVerb, verb: any): Record<verbType, string> => {
     const error = {} as Record<verbType, string>;
     Object.entries(datos).forEach(([key, value]) => {
-      if (value?.toLowerCase() !== verb[key]) {
+      if (value?.toLowerCase() !== verb[key].toLowerCase()) {
         error[key as verbType] = 'El valor ingresado es incorecto'
       }
     });
@@ -43,8 +43,9 @@ const api = {
   getPharse: (pharse: string): string => {
     return generateError(pharse);
   },
-  verifyPharse: (value: string, correct: string): boolean => {
-    return value === correct;
+  verifyPharse: (value: string, original: string): boolean => {
+    const values=[value,`${value}.`, `${value}?`]
+    return values.some((v)=>v===original);
   }
 
 };
