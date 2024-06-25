@@ -1,5 +1,5 @@
 import { words as allWords } from "../../../data/words";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import type { stageVerb, words } from "../../../types/types";
 import { TOTAL_WORDS, buttonsWord } from "../../../data/constant";
 import { Title } from "../Title";
@@ -17,7 +17,7 @@ export function NewWords() {
     const [value, setValue] = useState<string>("")
     const [stage, setStage] = useState<stageVerb>('verify')
     const [error, setError] = useState<string | undefined>()
-    const word = words[current - 1];
+    const word = useMemo(()=> words[current - 1],[words]);
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value);
     }
@@ -39,7 +39,7 @@ export function NewWords() {
             window.location.href = '/';
         }
     }
-
+   
 
     return (
         <div className="flex flex-col items-center justify-center gap-6">
