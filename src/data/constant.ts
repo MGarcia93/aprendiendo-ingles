@@ -8,10 +8,10 @@ export const TOTAL_WORDS=10;
 export const TOTAL_PHARSES=10;
 
 export const controls: controlVerb[] = [
-    {
+   /* {
         label: 'Infinitivo',
         name: 'infinitive'
-    },
+    },*/
     {
         label: 'Presente Continuo',
         name: 'presentContinuous'
@@ -20,10 +20,10 @@ export const controls: controlVerb[] = [
         label: 'Pasado Simple',
         name: 'pastSimple'
     },
-    {
+ /*   {
         label: 'Futuro',
         name: 'future'
-    },
+    },*/
 
 ]
 
@@ -36,6 +36,7 @@ export const buttonsVerb:Record<stageVerb,buttonInterface> = {
     },
     next: {
         label: "Siguiente Verbo",
+        className:"bg-green-700 ",
         icon: ArrowNext,
     },
     finish: {
@@ -51,6 +52,7 @@ export const buttonsWord:Record<stageVerb,buttonInterface> = {
     },
     next: {
         label: "Siguiente Palabra",
+        className:"bg-green-700 ",
         icon: ArrowNext,
     },
     finish: {
