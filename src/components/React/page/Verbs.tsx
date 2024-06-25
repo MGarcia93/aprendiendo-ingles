@@ -46,7 +46,7 @@ export function Verbs() {
         <div className="flex flex-col items-center justify-center gap-6">
             <Title ing={verb.infinitive} esp={verb.esp}></Title>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-                {controls.map(control => <Control answer={verb[control.name]} name={control.name} label={control.label} value={values[control.name]} onChange={onChange} error={error[control.name]}></Control>)}
+                {controls.map(control => <Control key={control.name} answer={verb[control.name]} name={control.name} label={control.label} value={values[control.name]} onChange={onChange} error={error[control.name]}></Control>)}
             </div>
             <Collapse title="Ejemplos">
                 <Examples examples={verb.ejemplo} />
