@@ -7,6 +7,6 @@ interface Props {
 export function Examples({ examples }: Props) {
 
     return <ul className="flex flex-col gap-2">
-        {examples.map(example => <Example example={example} />)}
+        {examples.map((example,key) => <Example key={`exam-${key}`} example={example} />)}
     </ul>
 }
