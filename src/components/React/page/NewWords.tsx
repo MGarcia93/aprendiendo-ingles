@@ -17,7 +17,7 @@ export function NewWords() {
     const [value, setValue] = useState<string>("")
     const [stage, setStage] = useState<stageVerb>('verify')
     const [error, setError] = useState<string | undefined>()
-    const word = useMemo(()=> words[current - 1],[words]);
+    const word = useMemo(()=> words[current - 1],[words,current]);
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value);
     }
