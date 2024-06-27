@@ -16,7 +16,6 @@ export function Control({ label, value, name, onChange, error, answer }: Props) 
     const toggleAnswer = () => {
         setShowAnswer(prev => !prev)
     }
-    console.log({ name, showAnswer })
     return <div className="space-y-2 ">
         <label htmlFor={name} className="text-sm font-medium">
             {label}
