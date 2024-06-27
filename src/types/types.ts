@@ -1,4 +1,5 @@
 
+
 export interface Card {
   title: string;
   body: string;
@@ -34,7 +35,10 @@ export interface ejemplo {
   ing: string
   esp: string
 }
-
+export interface pharse{
+  en:string,
+  es:string
+}
 export type idioma = 'esp' | 'ing'
 export type stageVerb = 'verify' | 'next' | 'finish'
 
