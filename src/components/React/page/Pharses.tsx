@@ -1,25 +1,27 @@
 import { useEffect, useMemo, useState } from "react";
-import type { stageVerb } from "../../../types/types";
+import type { pharse, stageVerb } from "../../../types/types";
 import { Paginate } from "../Paginate";
 import { TOTAL_PHARSES, buttonsPharse } from "../../../data/constant";
 import { Button } from "../form/Button";
 import api from "../../../utils/api";
 import { EyeOpen } from "../icons/EyeOpen";
 import { EyeClose } from "../icons/EyeClose";
+import { Translate } from "../icons/Translate";
 
 interface Props {
-  pharses: string[]
+  pharses: pharse[]
 }
 export function Pharses({ pharses: pharsesAll }: Props) {
   const [current, setCurrent] = useState<number>(() => 1);
-  const [pharses, setPharses] = useState<string[]>(() => pharsesAll.sort(() => Math.random() - Math.random()).slice(0, TOTAL_PHARSES))
+  const [pharses, setPharses] = useState<pharse[]>(() => pharsesAll.sort(() => Math.random() - Math.random()).slice(0, TOTAL_PHARSES))
   const [value, setValue] = useState<string>("")
   const [stage, setStage] = useState<stageVerb>('verify')
   const [error, setError] = useState<boolean>(false)
   const [showCorrect, setShowCorrect] = useState<boolean>(false)
+  const [showTranslation, setShowTranslation] = useState<boolean>(false)
 
   const pharse = pharses[current - 1]
-  const errorPharse = useMemo(() => api.getPharse(pharse), [pharse]);
+  const errorPharse = useMemo(() => api.getPharse(pharse.en), [pharse]);
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.target.value);
@@ -32,13 +34,14 @@ export function Pharses({ pharses: pharsesAll }: Props) {
   }
   const handleClickButton = () => {
     if (stage == 'verify') {
-      const e = !api.verifyPharse(value, pharse);
+      const e = !api.verifyPharse(value, pharse.en);
       setError(e);
       if (!e) {
         setStage(current == TOTAL_PHARSES ? 'finish' : 'next');
         return;
       }
     }
+    setShowCorrect(false);
     if (stage == 'next') {
       setCurrent(prev => prev + 1);
       setValue("");
@@ -49,11 +52,16 @@ export function Pharses({ pharses: pharsesAll }: Props) {
     }
   }
   const showAnswer = () => {
-    console.log('click')
     setShowCorrect(true)
     setTimeout(() => setShowCorrect(false), 5000)
   }
-
+  const toggleIdiom = () => setShowTranslation(prev => !prev)
+  const title = useMemo(() => {
+    if (showCorrect) {
+      return pharse.en
+    }
+    return showTranslation ? pharse.es : errorPharse
+  }, [showCorrect, showTranslation])
   return <section>
     <header>
       <h2 className="text-3xl font-bold mb-6">Arreglar la Frase</h2>
@@ -61,23 +69,34 @@ export function Pharses({ pharses: pharsesAll }: Props) {
     <article >
       <h3 className="text-xl font-bold mb-4">Verifica y Escribe la Oración, Corrigiéndola si Es Necesario:</h3>
       <div className="p-4 text-center">
-        <p className={`text-xl font-bold ${showCorrect ? ' text-green-500' : ''}`}>{showCorrect ? pharse : errorPharse} {" "}
-          <button
-            onClick={showAnswer}
-            disabled={showCorrect}
-            title="Muestra la palabra escrita correctamente durante 5 segundos">
-            {showCorrect ?
-              <EyeClose className=" w-6 h-6 text-white"></EyeClose>
-              :
-              <EyeOpen className=" w-6 h-6 text-white"></EyeOpen>
-            }
-          </button>
+        <p className={`text-xl font-bold ${showCorrect ? ' text-green-500' : ''}`}>{title} {" "}
+          {stage != 'next' ?
+            <button
+              onClick={showAnswer}
+              disabled={showCorrect}
+              title="Muestra la palabra escrita correctamente durante 5 segundos">
+              {showCorrect ?
+                <EyeClose className=" w-6 h-6 text-white"></EyeClose>
+                :
+                <EyeOpen className=" w-6 h-6 text-white"></EyeOpen>
+              }
+            </button>
+            :
+            <button
+              onClick={toggleIdiom}
+              title="Muestra la traduccion de la palabra">
+              <Translate className=" w-6 h-6 text-white"></Translate>
+
+
+            </button>
+          }
         </p>
       </div>
       <div className="flex flex-col gap-4">
         <textarea
           onChange={onChange}
           onKeyDown={handleKeyDown}
+          disabled={stage != 'verify'}
           className={`flex 
                 h-10 
                 w-full 
@@ -105,5 +124,5 @@ export function Pharses({ pharses: pharsesAll }: Props) {
 
       <Paginate current={current} total={TOTAL_PHARSES} label="Oracione "></Paginate>
     </footer>
-  </section>
+  </section >
 }
