@@ -17,7 +17,7 @@ export function NewWords() {
     const [value, setValue] = useState<string>("")
     const [stage, setStage] = useState<stageVerb>('verify')
     const [error, setError] = useState<string | undefined>()
-    const word = useMemo(()=> words[current - 1],[words,current]);
+    const word = useMemo(() => words[current - 1], [words, current]);
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value);
     }
@@ -39,14 +39,14 @@ export function NewWords() {
             window.location.href = '/';
         }
     }
-   
+
 
     return (
         <div className="flex flex-col items-center justify-center gap-6">
-            <Title ing={word.ing} esp={word.esp[0]}></Title>
+            <Title ing={word.ing} esp={word.esp.join('/').replace('/', ' / ')}></Title>
             <Categories categories={word.categorias}></Categories>
             <div className="grid grid-cols-1 gap-4 w-full">
-                <Control name="word" label="Escribe la traducción de la palabra" value={value} onChange={onChange} error={error}  answer={word.esp[0]}></Control>
+                <Control name="word" label="Escribe la traducción de la palabra" value={value} onChange={onChange} error={error} answer={word.esp[0]}></Control>
             </div>
 
             <Collapse title="Ejemplos">
