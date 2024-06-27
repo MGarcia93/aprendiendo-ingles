@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Arrow } from './icons/Arrow';
 
 interface Props {
@@ -8,7 +8,9 @@ interface Props {
 
 export function Collapse({ title, children }: Props) {
     const [isOpen, setIsOpen] = useState(false);
-
+    useEffect(()=>{
+        setIsOpen(false);
+    },[children])
     return (
         <div className="border rounded-md overflow-hidden w-full">
             <button
