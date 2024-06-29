@@ -61,7 +61,7 @@ export function Pharses({ pharses: pharsesAll }: Props) {
       return pharse.en
     }
     return showTranslation ? pharse.es : errorPharse
-  }, [showCorrect, showTranslation])
+  }, [showCorrect, showTranslation,pharse,errorPharse])
   return <section>
     <header>
       <h2 className="text-3xl font-bold mb-6">Arreglar la Frase</h2>
