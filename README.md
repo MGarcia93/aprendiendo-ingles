@@ -1,54 +1,41 @@
-# Astro Starter Kit: Basics
+# Aprendiendo Inglés
 
-```sh
-npm create astro@latest -- --template basics
-```
+![Portada](ruta/a/tu/imagen.jpg)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Bienvenido a **Aprendiendo Inglés**, una página web diseñada para ayudarte a practicar y mejorar tu nivel de inglés A1. Este proyecto ofrece diversas secciones enfocadas en el aprendizaje de verbos, nuevas palabras y la estructura correcta de las frases en inglés.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Secciones
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### Verbos
+- Aprende y practica los verbos más comunes en inglés.
+- Conjugación de verbos en diferentes tiempos verbales.
+- Ejercicios interactivos para consolidar tu conocimiento.
 
-## 🚀 Project Structure
+### Palabras Nuevas
+- Descubre y memoriza nuevas palabras en inglés.
+- Traducción de palabras del inglés al español.
+- Ejercicios para ayudarte a recordar y usar las nuevas palabras en contexto.
 
-Inside of your Astro project, you'll see the following folders and files:
+### Arreglar la Frase
+- Practica la gramática y la estructura de las frases en inglés.
+- Ejercicios para corregir y mejorar la construcción de oraciones.
+- Aprende las reglas básicas de la gramática inglesa a través de ejemplos prácticos.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Objetivos
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Verbos**: Ayudarte a conocer y conjugar los verbos más utilizados en inglés, mejorando así tu capacidad de comunicación básica.
+- **Palabras Nuevas**: Ampliar tu vocabulario en inglés, facilitando la comprensión y expresión de ideas.
+- **Arreglar la Frase**: Mejorar tu gramática y la estructura de tus oraciones en inglés, haciendo tu comunicación más clara y efectiva.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Cómo Empezar
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Visita la página web: [Aprendiendo Inglés](#)
+2. Selecciona una sección (Verbos, Palabras Nuevas, Arreglar la Frase) y comienza a practicar.
+3. Sigue las instrucciones y realiza los ejercicios propuestos en cada sección.
+4. Repite y practica regularmente para mejorar tu nivel de inglés A1.
 
-## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Esperamos que disfrutes aprendiendo inglés con nosotros. ¡Buena suerte!
