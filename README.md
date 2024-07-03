@@ -1,6 +1,6 @@
 # Aprendiendo Inglés
 
-![Portada](ruta/a/tu/imagen.jpg)
+![Portada](https://aprendiendo-ingles.vercel.app/portada.png)
 
 Bienvenido a **Aprendiendo Inglés**, una página web diseñada para ayudarte a practicar y mejorar tu nivel de inglés A1. Este proyecto ofrece diversas secciones enfocadas en el aprendizaje de verbos, nuevas palabras y la estructura correcta de las frases en inglés.
 
@@ -29,7 +29,7 @@ Bienvenido a **Aprendiendo Inglés**, una página web diseñada para ayudarte a 
 
 ## Cómo Empezar
 
-1. Visita la página web: [Aprendiendo Inglés](#)
+1. Visita la página web: [Aprendiendo Inglés](https://aprendiendo-ingles.vercel.app)
 2. Selecciona una sección (Verbos, Palabras Nuevas, Arreglar la Frase) y comienza a practicar.
 3. Sigue las instrucciones y realiza los ejercicios propuestos en cada sección.
 4. Repite y practica regularmente para mejorar tu nivel de inglés A1.
