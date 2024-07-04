@@ -45,6 +45,7 @@ export function Pharses({ pharses: pharsesAll }: Props) {
     if (stage == 'next') {
       setCurrent(prev => prev + 1);
       setValue("");
+      setShowTranslation(false);
       setStage('verify');
     }
     if (stage == 'finish') {
@@ -62,6 +63,7 @@ export function Pharses({ pharses: pharsesAll }: Props) {
     }
     return showTranslation ? pharse.es : errorPharse
   }, [showCorrect, showTranslation,pharse,errorPharse])
+  
   return <section>
     <header>
       <h2 className="text-3xl font-bold mb-6">Arreglar la Frase</h2>
